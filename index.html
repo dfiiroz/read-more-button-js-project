@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read More JS Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .readmore {
+      margin: 30px;
+      padding: 20px;
+      box-shadow: 5px 5px 12px rgb(114, 113, 113), -5px -5px 12px rgb(114, 113, 113);
+
+      text-align: center;
+      border-radius: 10px;
+      transition: all .5s linear;
+    }
+
+    .readmore:hover {
+      border-radius: 0px;
+      box-shadow: 5px 5px 10px rgb(238, 203, 203), -5px -5px 10px rgb(236, 207, 207);
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .text {
+      text-align: justify;
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: normal;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-more-btn {
+      text-transform: uppercase;
+      padding: 10px 15px;
+      font-weight: bold;
+      background: linear-gradient(to right, rgb(37, 58, 241), rgb(241, 54, 54));
+      color: aliceblue;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .read-more-btn:hover {
+      background: rgb(11, 235, 224);
+      color: black;
+    }
+
+    .more-text {
+      display: none;
+      transition: all 2 linear;
+    }
+
+    .more-text.active {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="readmore">
+    <h1>Heading</h1>
+    <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ut, quo dolore, fugiat molestiae cum
+      similique
+      nisi libero, assumenda odio quam aspernatur eligendi sed eum laudantium.
+      <span class="more-text">
+        Sint quam ducimus a commodi, ullam
+        consequuntur officia placeat nemo, expedita vero nihil ea aspernatur debitis nam consectetur suscipit ad amet
+        magnam obcaecati officiis veritatis! Inventore quaerat excepturi fugiat doloribus dolore sequi iure cupiditate
+        necessitatibus, deserunt debitis eveniet! Harum, explicabo reiciendis. Perspiciatis, molestias repellat. Nihil
+        aperiam et vel sequi fuga excepturi rem dolore harum dicta dolores similique ab quos, magni, doloribus eligendi!
+        Blanditiis architecto tempora corrupti aperiam quisquam fuga iste officia aliquam eaque debitis?
+      </span>
+    </p>
+    <button class="read-more-btn">Read More</button>
+  </div>
+
+
+  <script>
+    const readMore = document.querySelector(".read-more-btn");
+    const text = document.querySelector(".text");
+    const moreText = document.querySelector(".more-text");
+
+    readMore.addEventListener("click", (e) => {
+      text.classList.toggle("show-more");
+      moreText.classList.toggle("active");
+      if (readMore.innerHTML === "Read More") {
+        readMore.innerHTML = "Read Less";
+      } else {
+        readMore.innerHTML = "Read More";
+      }
+    })
+  </script>
+</body>
+
+</html>
